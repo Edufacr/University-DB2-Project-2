@@ -40,9 +40,16 @@ These are example of instructions to prepare hdfs folders and run a map reduce e
 ```
 hadoop fs -mkdir /data
 hadoop fs -mkdir /data/input
-hadoop fs -copyFromLocal datasales.dat /data/input
-hadoop jar maprexample.jar main.program /data/input/datadates.csv /data/output
+hadoop fs -copyFromLocal mercado.csv /data/input
+hadoop jar mapr.jar main.program /data/input/mercado.csv /data/output
 ```
+
+hadoop fs -cat /data/output/part-r-00000
+hadoop fs -rm -r /data/output
+
+../../../opt/hadoop/hadoop-3.3.0/logs
+cat ../../../opt/hadoop/hadoop-3.3.0/logs/userlogs/application_1607106532893_0014/container_1607106532893_0014_01_000002/syslog
+
 
 ### hive related
 To setup the hive environment just run the `hive-setup.sh` script located in hadoopuser home folder
