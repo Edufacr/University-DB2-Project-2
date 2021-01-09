@@ -20,3 +20,29 @@ SELECT p.player_api_id, player_name, birthday, overall_rating, potential
         ON p.player_api_id = pa.player_api_id;
 '''
 ## Hive Querys
+
+- Hay que tomar en cuenta que **birthday es un timestamp**
+- Hay que ver como cargarlo como timestamp de una vez
+- Hay que ver donde guarda el output de los querys o si hay que meterlo en una tabla
+
+*Create Schema*
+create schema SoccerDB;
+
+*Create Table*
+CREATE TABLE IF NOT EXISTS player_stats 
+    (   
+        player_api_id int, 
+        player_name string, 
+        birthday timestamp, 
+        overall_rating int, 
+        potential int
+    )
+COMMENT 'Overall rating and potential of players with name and birthday'
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+STORED AS TEXTFILE;
+
+*Insert into table*
+
+load data inpath '/data/input/PlayerStats.dat' into table player_stats;
