@@ -3,11 +3,33 @@ Second project of the Data Bases 2 course.
 
 ## Todo:
 
-- [] Pending
-- [X] Completed
+- [ ] Pending
+- [x] Completed
 
 ## Notes:
 
-- Los .md los podemos usar para poner notas hasta ahora los descubro y se ven bonitos jaja
+- Seria bueno poner en minisculas y sin espacios todos los nombres? para evitar errores?
+- El csv deberia tener de una vez solo los de inglaterra?
 
 **Para poner bold** 
+
+
+## Info a sacar de la base de datos de mercado
+PlayerName
+Birthday
+Afiliation
+Citizenship1
+Position
+MarketValue
+LastUpdatedDate
+HighestMarketValue
+HighestMarketValueDate
+
+
+
+## Player Info
+PlayerName
+Birthday *Incluye DateTime*
+Stats
+
+Preguntarle a Nunez si esta bien solo usar el overall rating
