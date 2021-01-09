@@ -22,14 +22,17 @@ SELECT p.player_api_id, player_name, birthday, overall_rating, potential
 ## Hive Querys
 
 - Hay que tomar en cuenta que **birthday es un timestamp**
-- Hay que ver como cargarlo como timestamp de una vez
 - Hay que ver donde guarda el output de los querys o si hay que meterlo en una tabla
+
+*Copy data file to hfs*
+hadoop fs -copyFromLocal PlayerStats.csv /data/input
 
 *Create Schema*
 create schema SoccerDB;
+use SoccerDB;
 
 *Create Table*
-CREATE TABLE IF NOT EXISTS player_stats 
+CREATE TABLE IF NOT EXISTS player_stats
     (   
         player_api_id int, 
         player_name string, 
@@ -38,11 +41,16 @@ CREATE TABLE IF NOT EXISTS player_stats
         potential int
     )
 COMMENT 'Overall rating and potential of players with name and birthday'
-ROW FORMAT DELIMITED
-FIELDS TERMINATED BY ','
-LINES TERMINATED BY '\n'
-STORED AS TEXTFILE;
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+STORED AS TEXTFILE
+tblproperties("skip.header.line.count"="1");
 
 *Insert into table*
+load data inpath '/data/input/PlayerStats.csv' into table player_stats;
 
-load data inpath '/data/input/PlayerStats.dat' into table player_stats;
+*Show headers*
+set hive.cli.print.header=true
+
+*Querys*
+select * from player_stats limit 2;
+
