@@ -24,3 +24,6 @@ hs_err_pid*
 
 # Data files
 *.sqlite
+
+# VS Code
+*.code-workspace
