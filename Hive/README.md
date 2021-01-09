@@ -11,46 +11,73 @@
         https://www.sqlitetutorial.net/sqlite-tutorial/sqlite-export-csv/
 
         Comando:
-        sqlite3 -header -csv database.sqlite "SELECT p.player_api_id, player_name, birthday, overall_rating, potential FROM Player p INNER JOIN Player_Attributes pa ON p.player_api_id = pa.player_api_id;" > PlayerStats.csv
+        sqlite3 -header -csv database.sqlite "SELECT p.player_api_id, player_name, birthday, overall_rating, date, potential FROM Player p INNER JOIN Player_Attributes pa ON p.player_api_id = pa.player_api_id; " > PlayerStats.csv
 
-## Query SQL
-'''
-SELECT p.player_api_id, player_name, birthday, overall_rating, potential
+## Query SQLite
+```
+SELECT p.player_api_id, player_name, birthday, overall_rating, date, potential
     FROM Player p INNER JOIN Player_Attributes pa
-        ON p.player_api_id = pa.player_api_id;
-'''
+        ON p.player_api_id = pa.player_api_id; 
+```
 ## Hive Querys
 
 - Hay que tomar en cuenta que **birthday es un timestamp**
 - Hay que ver donde guarda el output de los querys o si hay que meterlo en una tabla
 
-*Copy data file to hfs*
-hadoop fs -copyFromLocal PlayerStats.csv /data/input
+1. Copy data file to hfs
+    `hadoop fs -copyFromLocal PlayerStats.csv /data/input`
 
-*Create Schema*
-create schema SoccerDB;
-use SoccerDB;
+2. Create Schema
+    `create schema SoccerDB;`
+    `use SoccerDB;`
 
-*Create Table*
-CREATE TABLE IF NOT EXISTS player_stats
-    (   
-        player_api_id int, 
-        player_name string, 
-        birthday timestamp, 
-        overall_rating int, 
-        potential int
-    )
-COMMENT 'Overall rating and potential of players with name and birthday'
-ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
-STORED AS TEXTFILE
-tblproperties("skip.header.line.count"="1");
+3. Create Table
 
-*Insert into table*
+    ```
+    CREATE TABLE IF NOT EXISTS player_stats
+        (   
+            player_api_id int, 
+            player_name string, 
+            birthday timestamp, 
+            overall_rating int,
+            rating_date timestamp 
+            potential int,
+        )
+    COMMENT 'Overall rating and potential of players with name and birthday'
+    ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+    STORED AS TEXTFILE
+    tblproperties("skip.header.line.count"="1");
+    ```
+
+3. Insert into table
 load data inpath '/data/input/PlayerStats.csv' into table player_stats;
 
-*Show headers*
-set hive.cli.print.header=true
+4. Querys
 
-*Querys*
-select * from player_stats limit 2;
+### Show headers
+    set hive.cli.print.header=true
+### Test
+    select * from player_stats limit 2;
+### Filter
+**Hay que definir el query que se va a hacer**
+
+
+5. Save output to file in hdfs
+
+- You can add LOCAL DIRECTORY 
+
+```
+INSERT OVERWRITE DIRECTORY '/data/output/hive'
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+STORED AS TEXTFILE
+select * from player_stats2 limit 2;
+```
+
+6. Check output
+
+` hadoop fs -cat /data/output/hive/000000_0 `
+
+
+
 
