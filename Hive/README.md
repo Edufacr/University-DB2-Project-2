@@ -1,8 +1,10 @@
-## Import SQLite Data
+## Hive Guideline
 
-[ ] Hay que preguntarle al profe cual de las dos opciones
+## TODO
+[ ] Hay que preguntarle al profe cual de las dos opciones de importar los datos
+[ ] Hay que agregar el club ya que se debe tener al final el club del 2016
 
-### Opciones:
+## Import SQLite Data:
     1. Se puede hacer por medio de sqoop:
         https://docs.cloudera.com/HDPDocuments/HDP3/HDP-3.1.5/migrating-data/content/hive_import_rdbms_data_into_hive.html
         https://stackoverflow.com/questions/30365368/how-to-import-sqlite-database-into-hadoop-hdfs
@@ -13,7 +15,7 @@
         Comando:
         sqlite3 -header -csv database.sqlite "SELECT p.player_api_id, player_name, birthday, overall_rating, date, potential FROM Player p INNER JOIN Player_Attributes pa ON p.player_api_id = pa.player_api_id; " > PlayerStats.csv
 
-## Query SQLite
+### Query SQLite
 ```
 SELECT p.player_api_id, player_name, birthday, overall_rating, date, potential
     FROM Player p INNER JOIN Player_Attributes pa
