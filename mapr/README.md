@@ -14,8 +14,8 @@ docker run -it -p 9000:9000 -p 9092:9092 -p 22:22 -v /Users/gabriel/Documents/TE
 
 This is an example of how to manually copy files from the host to the container 
 ```
-docker cp maprexample.jar hadoopserver:/home/hadoopuser
-docker cp datadates.csv  hadoopserver:/home/hadoopuser
+docker cp mapr.jar hadoopserver:/home/hadoopuser
+docker cp mercado.csv  hadoopserver:/home/hadoopuser
 ```
 
 ### ssh related
@@ -40,15 +40,20 @@ These are example of instructions to prepare hdfs folders and run a map reduce e
 ```
 hadoop fs -mkdir /data
 hadoop fs -mkdir /data/input
-hadoop fs -copyFromLocal mercado.csv /data/input
-hadoop jar mapr.jar main.program /data/input/mercado.csv /data/output
+hadoop fs -copyFromLocal mapr/mercado.csv /data/input
+hadoop jar mapr/mapr.jar main.program /data/input/mercado.csv /data/output
 ```
 
 hadoop fs -cat /data/output/part-r-00000
 hadoop fs -rm -r /data/output
 
 ../../../opt/hadoop/hadoop-3.3.0/logs
-cat ../../../opt/hadoop/hadoop-3.3.0/logs/userlogs/application_1607106532893_0014/container_1607106532893_0014_01_000002/syslog
+cat ../../../opt/hadoop/hadoop-3.3.0/logs/userlogs/application_1607106532893_000x/container_1607106532893_000x_01_000002/syslog
+
+cat ../../../opt/hadoop/hadoop-3.3.0/logs/userlogs/application_1610161925441_0018/container_1610161925441_0018_01_000002/stdout
+
+
+
 
 
 ### hive related

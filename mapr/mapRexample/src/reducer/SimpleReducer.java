@@ -11,12 +11,21 @@ public class SimpleReducer extends Reducer<Text, TextArrayWritable, Text, Text> 
 	
     public void reduce(Text key, Iterable<TextArrayWritable> values, Context context ) throws IOException, InterruptedException {
     	
-    	for (TextArrayWritable player : values) {
-    		String[] playerInfo = player.toStrings();
-    		String resultStr = "";
-    		for (String data : playerInfo) { resultStr += data + ","; }
-    		result.set(resultStr);
-    		context.write(key, result);
+    	try {
+    		for (TextArrayWritable player : values) {
+        		String[] playerInfo = player.toStrings();
+        		String resultStr = "";
+        		int index = 0;
+        		while (index < playerInfo.length-1) {
+        			resultStr+=playerInfo[index]+",";
+        			index++;
+        		}
+        		resultStr+=playerInfo[index];
+        		result.set(resultStr);
+        		context.write(key, result);
+        	}
+    	} catch(Exception e) {
+    		System.out.println(e);
     	}
     }
 }
