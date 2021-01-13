@@ -9,7 +9,7 @@ docker build . -t hadoop
 
 docker network create --driver bridge --subnet 10.0.0.0/28 littlenet
 
-docker run -it -p 9000:9000 -p 9092:9092 -p 22:22 -v /Users/gabriel/Documents/TEC/Bases\ de\ datos\ II/University-DB2-Project-2/mapr:/home/hadoopuser/mapr --name hadoopserver --net littlenet --ip 10.0.0.2 hadoop
+docker run -it -p 9000:9000 -p 9092:9092 -p 22:22 -v /Users/gabriel/Documents/TEC/Bases\ de\ datos\ II/University-DB2-Project-2/mapr:/home/hadoopuser/mapr --name hadoopserver --net littlenet --ip 10.0.0.2 hadoop-spark
 ```
 
 This is an example of how to manually copy files from the host to the container 
@@ -64,7 +64,7 @@ Then access the hive console with `hive`
 The following is an example of instructions in hive console to test your hive environment. The example loads the content of the CSV file datasales.dat into a temporary table where all the fields are string. Following the transfer of the data to the correct table using data types. 
 
 ```
-create schema <name>; // to create an schema
+create schema <name>; // to create a schema
 
 create table tmp_sales(fecha string, monto decimal(10,2)) row format delimited fields terminated by ',';
 
@@ -89,6 +89,13 @@ SELECT anyo, MAX(monto) from (
 ) as tabla 
 group by anyo;
 ```
+
+CREATE EXTERNAL TABLE tab ( id INT, name STRING)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ","
+LOCATION "/hive/data/two";
+
+load data inpath '/data/input/test_info.csv' into table tab;
 
 ### Kakfa related
 To start the kafkta server just the script `start-kafka.sh` located in the hadoopuser home folder.
