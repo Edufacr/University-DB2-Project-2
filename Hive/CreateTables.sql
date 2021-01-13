@@ -22,10 +22,10 @@ CREATE TABLE IF NOT EXISTS raw_Player_Attributes
     id int,
     player_fifa_api_id int,
     player_api_id int,
-    date timestamp,
+    seasonDate timestamp,
     overall_rating int,
     potential int,
-    preferred_foot int,attacking_work_rate int,defensive_work_rate int,crossing int,finishing int,heading_accuracy int,short_passing int,volleys int,dribbling int,curve int,free_kick_accuracy int,long_passing int,ball_control int,acceleration int,sprint_speed int,agility int,reactions int,balance int,shot_power int,jumping int,stamina int,strength int,long_shots int,aggression int,interceptions int,positioning int,vision int,penalties int,marking int,standing_tackle int,sliding_tackle int,gk_diving int,gk_handling int,gk_kicking int,gk_positioning int,gk_reflexes
+    preferred_foot int,attacking_work_rate int,defensive_work_rate int,crossing int,finishing int,heading_accuracy int,short_passing int,volleys int,dribbling int,curve int,free_kick_accuracy int,long_passing int,ball_control int,acceleration int,sprint_speed int,agility int,reactions int,balance int,shot_power int,jumping int,stamina int,strength int,long_shots int,aggression int,interceptions int,positioning int,vision int,penalties int,marking int,standing_tackle int,sliding_tackle int,gk_diving int,gk_handling int,gk_kicking int,gk_positioning int,gk_reflexes int
     )
 COMMENT 'Player attributes'
 ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
@@ -40,13 +40,12 @@ tblproperties("skip.header.line.count"="1");
 -- **********************
 CREATE TABLE IF NOT EXISTS Player_stats
     (   
-        player_api_id int, 
         player_name string, 
         birthday timestamp, 
         overall_rating int,
-        rating_date timestamp,
         potential int,
-        team_api_id int
+        rating_ratio float,
+        potencial_ratio float
     )
 COMMENT 'Overall ratings and potentials of players with name, birthday and club'
 ROW FORMAT DELIMITED
