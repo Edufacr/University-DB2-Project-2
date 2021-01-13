@@ -25,4 +25,5 @@ hs_err_pid*
 # Data files
 *.sqlite
 
-mapRecample
+#Cache file bug
+mapRexample
