@@ -29,3 +29,6 @@ Team.csv
 
 # VS Code
 *.code-workspace
+
+#Cache file bug
+mapRexample
