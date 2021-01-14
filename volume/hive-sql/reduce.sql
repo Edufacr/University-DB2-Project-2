@@ -62,6 +62,8 @@ INSERT INTO player_stats
 -- **********************
 -- Write to file
 -- **********************
+-- - You can add LOCAL DIRECTORY 
+
 INSERT OVERWRITE DIRECTORY '/data/output/hive'
 ROW FORMAT DELIMITED
 FIELDS TERMINATED BY ','
