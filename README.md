@@ -10,6 +10,8 @@ docker build . -t hadoop-spark
 docker network create --driver bridge --subnet 10.0.0.0/28 littlenet
 
 docker run -it -p 9000:9000 -p 9092:9092 -p 22:22 -v /Users/gabriel/Documents/TEC/Bases\ de\ datos\ II/University-DB2-Project-2/volume:/home/hadoopuser/vol --name hadoopserver --net littlenet --ip 10.0.0.2 hadoop-spark
+
+docker run -it -p 9000:9000 -p 9092:9092 -p 22:22 -v C:/Users/eduma/Documents/CodingProjects/DB-2/University-DB2-Project-2/volume:/home/hadoopuser/vol --name hadoopserver --net littlenet --ip 10.0.0.2 hadoop-spark
 ```
 
 This is an example of how to manually copy files from the host to the container 
