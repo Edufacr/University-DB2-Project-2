@@ -32,22 +32,20 @@ ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
 STORED AS TEXTFILE
 tblproperties("skip.header.line.count"="1");
 
--- **********************
--- Temp tables
--- **********************
+
 -- **********************
 -- Output table
 -- **********************
-CREATE TABLE IF NOT EXISTS Player_stats
+CREATE TABLE IF NOT EXISTS player_stats
     (   
         player_name string, 
-        birthday timestamp, 
+        birthday date, 
         overall_rating int,
         potential int,
-        rating_ratio float,
-        potencial_ratio float
+        potential_change float,
+        overall_change_rate float
     )
-COMMENT 'Overall ratings and potentials of players with name, birthday and club'
+COMMENT 'Overall ratings and potentials of players with name, birthday and calculated values'
 ROW FORMAT DELIMITED
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
