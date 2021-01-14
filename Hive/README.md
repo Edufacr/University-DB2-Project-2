@@ -1,6 +1,6 @@
 ## Hive Guideline
 
-## Import SQLite Data:
+## SQLite Data to CSV:
 
 sqlite3 -header -csv database.sqlite "SELECT * FROM Player" > Player.csv
 sqlite3 -header -csv database.sqlite "SELECT * FROM Player_Attributes" > Player_Attributes.csv
@@ -13,43 +13,26 @@ sqlite3 -header -csv database.sqlite "SELECT * FROM Player_Attributes" > Player_
     hadoop fs -copyFromLocal player.csv /data/input
     hadoop fs -copyFromLocal player_attributes.csv /data/input
 
-2. Create Schema
-    create schema SoccerDB;
-    use SoccerDB;
+2. Create Tables
+    hive –f createTables.sql
 
-3. Create Tables
-    hive –f CreateTables.sql
-
-4. Insert into table
+3. Insert into table (ESTO ES DENTRO DE HIVE)
     load data inpath '/data/input/player.csv' into table raw_player;
     load data inpath '/data/input/player_attributes.csv' into table raw_player_attributes;
 
-5. Querys
-
-### Show headers
-    set hive.cli.print.header=true
-### Test
-    select * from raw_player limit 2;
-    select * from raw_player_attributes limit 2;
-### Filter
-**Hay que definir el query que se va a hacer**
-
-
-6. Save output to file in hdfs
-
-- You can add LOCAL DIRECTORY 
-
-```
-INSERT OVERWRITE DIRECTORY '/data/output/hive'
-ROW FORMAT DELIMITED
-FIELDS TERMINATED BY ','
-STORED AS TEXTFILE
-select player_name, birthday, overall_rating, potential, potential_change, overall_change_rate from player_stats;
-```
+4. Querys
+    
+    hive –f reduce.sql
 
 6. Check output
 
-` hadoop fs -cat /data/output/hive/000000_0 `
+    hadoop fs -cat /data/output/hive/000000_0
+
+## Notas
+
+*Show headers*
+    Para mostrar los headers a la hora de hacer un select en hive:
+    set hive.cli.print.header=true
 
 
 
