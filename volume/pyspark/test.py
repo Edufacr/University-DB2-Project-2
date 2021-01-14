@@ -5,11 +5,21 @@ from pyspark.sql.types import (DateType, IntegerType, FloatType, StructField,
                                StructType, TimestampType, StringType)
 
 
-spark = SparkSession.builder.appName("Read Transactions").getOrCreate()
+spark = SparkSession.builder.appName('Read Transactions').getOrCreate()
 
-df_load = spark.read.csv('hdfs://10.0.0.2:9000/user/hdfs/data/input/mercado.csv')
-df_load.show()
+def func(row):
+    # print(row.id)
+    row.id = row.id*2
 
+try:
+    csv_schema = StructType([StructField('id', IntegerType()), StructField('word', StringType())])
+    df_load = spark.read.csv('hdfs://127.0.0.1:9000/data/input/test_info.csv', schema=csv_schema)
+    # df_load = spark.read.csv('hdfs://127.0.0.1:9000/data/output/part-r-00000')
+    df_load.foreach(func)
+    df_load.show()
+    df_load.replace()
+except Exception as e:
+    print(e)
 
 # spark.createDataFrame()
 

@@ -5,7 +5,7 @@ This readme helps you to perform the intended labs in classroom regarding topics
 Build the image, create an internal network and run the image using a local volumen
 path to share files and jars from the host computer
 ```
-docker build . -t hadoop
+docker build . -t hadoop-spark
 
 docker network create --driver bridge --subnet 10.0.0.0/28 littlenet
 
@@ -48,10 +48,10 @@ hadoop fs -cat /data/output/part-r-00000
 hadoop fs -rm -r /data/output
 
 ../../../opt/hadoop/hadoop-3.3.0/logs
-cat ../../../opt/hadoop/hadoop-3.3.0/logs/userlogs/application_1607106532893_000x/container_1607106532893_000x_01_000002/syslog
+cat ../../../opt/hadoop/hadoop-3.3.0/logs/userlogs/application_1607106532893_000x/container_1607106532893_000x_01_000002/stdout
 
-cat ../../../opt/hadoop/hadoop-3.3.0/logs/userlogs/application_1610161925441_0018/container_1610161925441_0018_01_000002/stdout
-
+# Finding hdfs url
+cat ../../opt/hadoop/hadoop-3.3.0/etc/hadoop/core-site.xml
 
 ### hive related
 To setup the hive environment just run the `hive-setup.sh` script located in hadoopuser home folder
@@ -91,7 +91,7 @@ group by anyo;
 To run the examples use the spark-submit command, for example:
 
 ```
-spark-submit test.py
+
 ```
 
 
