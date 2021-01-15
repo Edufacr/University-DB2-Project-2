@@ -15,12 +15,9 @@ public class SimpleReducer extends Reducer<Text, TextArrayWritable, Text, Text> 
     		for (TextArrayWritable player : values) {
         		String[] playerInfo = player.toStrings();
         		String resultStr = "";
-        		int index = 0;
-        		while (index < playerInfo.length-1) {
-        			resultStr+=playerInfo[index]+",";
-        			index++;
+        		for (String attribute : playerInfo) {
+        			resultStr += "," + attribute;
         		}
-        		resultStr+=playerInfo[index];
         		result.set(resultStr);
         		context.write(key, result);
         	}
