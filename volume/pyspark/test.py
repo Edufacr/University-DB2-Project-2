@@ -17,9 +17,14 @@ try:
     # df_load = spark.read.csv('hdfs://127.0.0.1:9000/data/output/part-r-00000')
     df_load.foreach(func)
     df_load.show()
-    df_load.replace()
 except Exception as e:
     print(e)
+
+
+'''
+MapR Output: team_name, player_name, birth_date, position, current_price, cp_date, highest_price, hp_date
+Hive Output: player_name, birth_date, overall_rating, potential, potential_change, overall_change_rate
+'''
 
 # spark.createDataFrame()
 

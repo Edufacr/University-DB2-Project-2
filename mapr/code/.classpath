@@ -6,6 +6,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/Users/gabriel/Documents/TEC/Bases de datos II/University-DB2-Project-2/mapr/mapRexample/hadoop-core-1.2.1.jar"/>
+	<classpathentry kind="lib" path="/Users/gabriel/Documents/TEC/Bases de datos II/University-DB2-Project-2/mapr/code/hadoop-core-1.2.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
