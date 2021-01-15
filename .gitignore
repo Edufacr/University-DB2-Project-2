@@ -24,3 +24,12 @@ hs_err_pid*
 
 # Data files
 *.sqlite
+Match.csv
+Team.csv
+
+# VS Code
+*.code-workspace
+.vscode
+
+#Cache file bug
+mapRexample
