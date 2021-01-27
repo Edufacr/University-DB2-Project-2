@@ -33,3 +33,6 @@ Team.csv
 
 #Cache file bug
 mapRexample
+
+# Node modules
+node_modules

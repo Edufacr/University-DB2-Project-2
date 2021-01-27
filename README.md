@@ -103,3 +103,7 @@ To start the kafkta server just the script `start-kafka.sh` located in the hadoo
 
 To test your Kafka environment follow the [kafka quickstart guide](https://kafka.apache.org/quickstart) 
 
+### Visualization 
+
+Le hice un apt-get intall npm
+npm install --save
