@@ -7,8 +7,6 @@ sqlite3 -header -csv database.sqlite "SELECT * FROM Player_Attributes" > Player_
 
 ## Hive Querys
 
-- Hay que tomar en cuenta que **birthday es un timestamp**
-
 1. Copy data file to hfs
     hadoop fs -copyFromLocal player.csv /data/input
     hadoop fs -copyFromLocal player_attributes.csv /data/input
