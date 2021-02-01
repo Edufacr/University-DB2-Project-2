@@ -36,15 +36,16 @@ try:
     # joins both dataframes and selects necessary info
     join_condition = (market.player_name==player.name) & (market.birth_date==player.bdate)
 
+    predictionExpression = "(((overall_change+price_change+2)/2)+potential_change)*current_price"
     predictions = market.join(player,join_condition,'inner').selectExpr(
-                    "country","team_name", "player_name", "(((overall_change+price_change+2)/2)+potential_change)*current_price AS predicted_value")
+                    "country","team_name", "player_name", predictionExpression + " AS predicted_value")
 
     playersByGroup = predictions.withColumn('player',struct(
                                                                 col("player_name").alias("name"),
                                                                 col("predicted_value").alias("value"))
                                                                     ).drop("predicted_value","player_name"
                                                                         ).groupBy("country","team_name").agg(collect_list("player").alias("Players"))
-                                                                                             
+
     clubsByCountry = playersByGroup.withColumn("club", struct(
                                                                 col("team_name").alias("name"),
                                                                 col("Players").alias("children"))
