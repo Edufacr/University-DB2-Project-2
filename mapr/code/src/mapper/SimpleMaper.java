@@ -19,7 +19,8 @@ public class SimpleMaper extends Mapper<Object, Text, Text, TextArrayWritable> {
     		 Text club = new Text(arr[2].trim());
     		 Date rawBirthDate = new SimpleDateFormat("MM/dd/yyyy").parse(arr[5].trim());
     		 Text birthDate = new Text(new SimpleDateFormat("yyyy-MM-dd").format(rawBirthDate));
-    		 Text marketValue = new Text(arr[28].trim());
+			 Text marketValue = new Text(arr[28].trim());
+			 Text country = new Text(arr[26].trim());
     		 
     		 // Attributes for calculating the rate of change in a player's value
     		 int currentValue = Integer.parseInt(arr[28].trim());
@@ -39,7 +40,7 @@ public class SimpleMaper extends Mapper<Object, Text, Text, TextArrayWritable> {
     		 Text valueChange = new Text(Double.toString(valueRoChange));
     		 
     		 // Array for building a multiple field value
-    		 Writable[] values = {name, birthDate, marketValue, valueChange};
+    		 Writable[] values = {name, birthDate, marketValue, valueChange,country};
     		 TextArrayWritable writable = new TextArrayWritable(values);
     		 
     		 context.write(club, writable);
