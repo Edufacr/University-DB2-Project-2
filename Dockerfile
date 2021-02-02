@@ -13,6 +13,7 @@ RUN apt-get -y install yarn
 RUN apt-get install -y nodejs
 RUN apt install git-all -y
 RUN apt-get install -y libtidy-dev
+RUN apt-get intall npm
 
 ENV SPARK_HOME=/usr/local/lib/python3.8/dist-packages/pyspark
 

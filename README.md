@@ -61,41 +61,24 @@ To setup the hive environment just run the `hive-setup.sh` script located in had
 
 Then access the hive console with `hive`
 
-The following is an example of instructions in hive console to test your hive environment. The example loads the content of the CSV file datasales.dat into a temporary table where all the fields are string. Following the transfer of the data to the correct table using data types. 
+1. Copy data file to hfs
+    hadoop fs -copyFromLocal player.csv /data/input
+    hadoop fs -copyFromLocal player_attributes.csv /data/input
 
-```
-create schema <name>; // to create a schema
+2. Create Tables
+    hive –f createTables.sql
 
-create table tmp_sales(fecha string, monto decimal(10,2)) row format delimited fields terminated by ',';
+3. Insert into table (ESTO ES DENTRO DE HIVE)
+    load data inpath '/data/input/player.csv' into table raw_player;
+    load data inpath '/data/input/player_attributes.csv' into table raw_player_attributes;
 
-load data inpath '/data/input/datasales.dat' into table tmp_sales;
-
-CREATE TABLE IF NOT EXISTS sales ( fecha timestamp, monto decimal(10,2))
-COMMENT 'Ventas por mes por anyo'
-ROW FORMAT DELIMITED
-FIELDS TERMINATED BY ','
-LINES TERMINATED BY '\n'
-STORED AS TEXTFILE;
-
-insert into table sales select from_unixtime(unix_timestamp(fecha, 'MM/dd/yyyy')), monto from tmp_sales;
-```
-
-Once data is loaded, run some queries to test the performance 
-```
-SELECT MONTH(fecha), YEAR(fecha), SUM(monto) from sales group by YEAR(fecha), MONTH(fecha);
-
-SELECT anyo, MAX(monto) from (
-    SELECT MONTH(fecha) mes, YEAR(fecha) anyo, SUM(monto) monto from sales group by YEAR(fecha), MONTH(fecha)
-) as tabla 
-group by anyo;
-```
+4. Querys
+    hive –f reduce.sql
 
 ### pyspark related
 To run the examples use the spark-submit command, for example:
 
-```
 spark-submit vol/pyspark/predictor.py
-```
 
 
 ### Kakfa related
@@ -103,3 +86,12 @@ To start the kafkta server just the script `start-kafka.sh` located in the hadoo
 
 To test your Kafka environment follow the [kafka quickstart guide](https://kafka.apache.org/quickstart) 
 
+### Visualization 
+Run:
+    node vol/visualizer/app.js
+Access:
+    127.0.0.1:9092
+
+//npm install --save express
+// npm install -g webhdfs
+/data/output/pyspark/part-00172-bd56f0b2-bb15-4c04-8bb3-ceda608d5f48-c000.json

@@ -12,6 +12,7 @@
 
 # Package Files #
 *.jar
+!mapr.jar
 *.war
 *.nar
 *.ear
@@ -33,3 +34,6 @@ Team.csv
 
 #Cache file bug
 mapRexample
+
+# Node modules
+node_modules

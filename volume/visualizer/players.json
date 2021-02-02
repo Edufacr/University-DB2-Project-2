@@ -1,0 +1,473 @@
+{
+    "country": "England",
+    "children": [
+        {
+            "name": "Man City",
+            "children": [
+                {
+                    "name": "Kyle Walker",
+                    "value": 5.126582281664014E7
+                },
+                {
+                    "name": "Raheem Sterling",
+                    "value": 1.5037037044763565E8
+                },
+                {
+                    "name": "John Stones",
+                    "value": 6.779220789670944E7
+                },
+                {
+                    "name": "Scott Carson",
+                    "value": 1333333.2538604736
+                }
+            ]
+        },
+        {
+            "name": "Crystal Palace",
+            "children": [
+                {
+                    "name": "James Tomkins",
+                    "value": 5330000.001937151
+                },
+                {
+                    "name": "Joel Ward",
+                    "value": 3705263.063311577
+                },
+                {
+                    "name": "Martin Kelly",
+                    "value": 2481081.1188071966
+                },
+                {
+                    "name": "Andros Townsend",
+                    "value": 1.619999997317791E7
+                },
+                {
+                    "name": "Connor Wickham",
+                    "value": 2205479.3313145638
+                },
+                {
+                    "name": "Gary Cahill",
+                    "value": 3899999.8569488525
+                },
+                {
+                    "name": "Scott Dann",
+                    "value": 3599999.9046325684
+                }
+            ]
+        },
+        {
+            "name": "Everton",
+            "children": [
+                {
+                    "name": "Leighton Baines",
+                    "value": 2028409.2426300049
+                },
+                {
+                    "name": "Michael Keane",
+                    "value": 3.2916666716337204E7
+                },
+                {
+                    "name": "Jordan Pickford",
+                    "value": 4.563380300998688E7
+                },
+                {
+                    "name": "Theo Walcott",
+                    "value": 1.1517857015132904E7
+                },
+                {
+                    "name": "Tom Davies",
+                    "value": 2.147058829665184E7
+                },
+                {
+                    "name": "Fabian Delph",
+                    "value": 1.5389610389247537E7
+                }
+            ]
+        },
+        {
+            "name": "Watford",
+            "children": [
+                {
+                    "name": "Danny Welbeck",
+                    "value": 1.0607594713568687E7
+                },
+                {
+                    "name": "Tom Cleverley",
+                    "value": 5431818.18164885
+                },
+                {
+                    "name": "Craig Dawson",
+                    "value": 5431818.187236786
+                },
+                {
+                    "name": "Ben Foster",
+                    "value": 2318181.7531585693
+                },
+                {
+                    "name": "Troy Deeney",
+                    "value": 9545454.382896423
+                }
+            ]
+        },
+        {
+            "name": "Wolves",
+            "children": [
+                {
+                    "name": "John Ruddy",
+                    "value": 2400000.035762787
+                },
+                {
+                    "name": "Ryan Bennett",
+                    "value": 7197183.094918728
+                }
+            ]
+        },
+        {
+            "name": "Spurs",
+            "children": [
+                {
+                    "name": "Harry Kane",
+                    "value": 1.6097560934722424E8
+                },
+                {
+                    "name": "Eric Dier",
+                    "value": 2.980263166129589E7
+                },
+                {
+                    "name": "Dele Alli",
+                    "value": 9.952597260475159E7
+                },
+                {
+                    "name": "Danny Rose",
+                    "value": 2.4198718462139368E7
+                }
+            ]
+        },
+        {
+            "name": "Chelsea",
+            "children": [
+                {
+                    "name": "Ross Barkley",
+                    "value": 3.3000000044703484E7
+                },
+                {
+                    "name": "Ruben Loftus-Cheek",
+                    "value": 3.6363636553287506E7
+                }
+            ]
+        },
+        {
+            "name": "Man Utd",
+            "children": [
+                {
+                    "name": "Phil Jones",
+                    "value": 1.387500001117587E7
+                },
+                {
+                    "name": "Ashley Young",
+                    "value": 2962962.9850387573
+                },
+                {
+                    "name": "Jesse Lingard",
+                    "value": 4.315789461135864E7
+                },
+                {
+                    "name": "Luke Shaw",
+                    "value": 3.3076923117041588E7
+                },
+                {
+                    "name": "Marcus Rashford",
+                    "value": 9.855072498321533E7
+                }
+            ]
+        },
+        {
+            "name": "Liverpool",
+            "children": [
+                {
+                    "name": "Jordan Henderson",
+                    "value": 3.58860759716481E7
+                },
+                {
+                    "name": "Nathaniel Clyne",
+                    "value": 1.0028571233153343E7
+                },
+                {
+                    "name": "Alex Oxlade-Chamberlain",
+                    "value": 3.5953525714576244E7
+                },
+                {
+                    "name": "Adam Lallana",
+                    "value": 1.2000000178813934E7
+                },
+                {
+                    "name": "James Milner",
+                    "value": 1.2857142984867096E7
+                }
+            ]
+        },
+        {
+            "name": "Atletico Madrid",
+            "children": [
+                {
+                    "name": "Kieran Trippier",
+                    "value": 3.684210527688265E7
+                }
+            ]
+        },
+        {
+            "name": "Leicester",
+            "children": [
+                {
+                    "name": "Marc Albrighton",
+                    "value": 1.0266666673123837E7
+                },
+                {
+                    "name": "Jamie Vardy",
+                    "value": 2.0E7
+                },
+                {
+                    "name": "Demarai Gray",
+                    "value": 2.4117647111415863E7
+                }
+            ]
+        },
+        {
+            "name": "West Ham",
+            "children": [
+                {
+                    "name": "Jack Wilshere",
+                    "value": 6885521.63541317
+                },
+                {
+                    "name": "Aaron Cresswell",
+                    "value": 6882882.729172707
+                },
+                {
+                    "name": "Michail Antonio",
+                    "value": 1.4150000307708979E7
+                },
+                {
+                    "name": "Mark Noble",
+                    "value": 6562500.0
+                }
+            ]
+        },
+        {
+            "name": "Southampton",
+            "children": [
+                {
+                    "name": "Alex McCarthy",
+                    "value": 5133333.336561918
+                },
+                {
+                    "name": "Nathan Redmond",
+                    "value": 2.2162162214517593E7
+                },
+                {
+                    "name": "James Ward-Prowse",
+                    "value": 1.9920000046491623E7
+                },
+                {
+                    "name": "Ryan Bertrand",
+                    "value": 1.3509615389630198E7
+                }
+            ]
+        },
+        {
+            "name": "Bournemouth",
+            "children": [
+                {
+                    "name": "Steve Cook",
+                    "value": 1.0555555559694767E7
+                },
+                {
+                    "name": "Adam Smith",
+                    "value": 7400000.002235174
+                },
+                {
+                    "name": "Junior Stanislas",
+                    "value": 3212560.411542654
+                },
+                {
+                    "name": "Callum Wilson",
+                    "value": 3.239999994635582E7
+                },
+                {
+                    "name": "Andrew Surman",
+                    "value": 2500000.0
+                },
+                {
+                    "name": "Jordon Ibe",
+                    "value": 8326760.411262512
+                },
+                {
+                    "name": "Simon Francis",
+                    "value": 1799999.9523162842
+                },
+                {
+                    "name": "Dominic Solanke",
+                    "value": 2.1441176533699036E7
+                },
+                {
+                    "name": "Charlie Daniels",
+                    "value": 2785714.2090797424
+                }
+            ]
+        },
+        {
+            "name": "Brighton",
+            "children": [
+                {
+                    "name": "Glenn Murray",
+                    "value": 2625000.0
+                }
+            ]
+        },
+        {
+            "name": "Arsenal",
+            "children": [
+                {
+                    "name": "Calum Chambers",
+                    "value": 1.594444453716278E7
+                }
+            ]
+        },
+        {
+            "name": "Norwich",
+            "children": [
+                {
+                    "name": "Patrick Roberts",
+                    "value": 5378787.815570831
+                }
+            ]
+        },
+        {
+            "name": "Aston Villa",
+            "children": [
+                {
+                    "name": "Jed Steer",
+                    "value": 2156250.0
+                },
+                {
+                    "name": "Tom Heaton",
+                    "value": 6000000.0
+                },
+                {
+                    "name": "Jack Grealish",
+                    "value": 2.8169013932347298E7
+                },
+                {
+                    "name": "Matt Targett",
+                    "value": 1.2121212184429169E7
+                }
+            ]
+        },
+        {
+            "name": "FC Augsburg",
+            "children": [
+                {
+                    "name": "Reece Oxford",
+                    "value": 3065934.1514110565
+                }
+            ]
+        },
+        {
+            "name": "Sheffield Utd.",
+            "children": [
+                {
+                    "name": "Chris Basham",
+                    "value": 2500000.0
+                },
+                {
+                    "name": "Richard Stearman",
+                    "value": 642857.1343421936
+                },
+                {
+                    "name": "Phil Jagielka",
+                    "value": 541666.6269302368
+                }
+            ]
+        },
+        {
+            "name": "Burnley",
+            "children": [
+                {
+                    "name": "Ashley Barnes",
+                    "value": 1.0281690135598183E7
+                },
+                {
+                    "name": "Jay Rodriguez",
+                    "value": 9109311.513602734
+                },
+                {
+                    "name": "Danny Drinkwater",
+                    "value": 5810526.221990585
+                },
+                {
+                    "name": "Matthew Lowton",
+                    "value": 5067567.569203675
+                },
+                {
+                    "name": "Charlie Taylor",
+                    "value": 7913043.4691905975
+                },
+                {
+                    "name": "Aaron Lennon",
+                    "value": 3095238.208770752
+                },
+                {
+                    "name": "Joe Hart",
+                    "value": 2333333.4922790527
+                },
+                {
+                    "name": "Jack Cork",
+                    "value": 1.5389610389247537E7
+                }
+            ]
+        },
+        {
+            "name": "AS Roma",
+            "children": [
+                {
+                    "name": "Chris Smalling",
+                    "value": 2.0481927692890167E7
+                }
+            ]
+        },
+        {
+            "name": "Newcastle",
+            "children": [
+                {
+                    "name": "Jonjo Shelvey",
+                    "value": 1.6168831139802933E7
+                },
+                {
+                    "name": "Jack Colback",
+                    "value": 2178947.3332464695
+                },
+                {
+                    "name": "Karl Darlow",
+                    "value": 3316993.487998843
+                },
+                {
+                    "name": "Jamaal Lascelles",
+                    "value": 2.0086956560611725E7
+                },
+                {
+                    "name": "Andy Carroll",
+                    "value": 3899999.8569488525
+                }
+            ]
+        },
+        {
+            "name": "VVV-Venlo",
+            "children": [
+                {
+                    "name": "Lee Cattermole",
+                    "value": 571428.5373687744
+                }
+            ]
+        }
+    ]
+}
