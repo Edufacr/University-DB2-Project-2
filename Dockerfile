@@ -13,7 +13,7 @@ RUN apt-get -y install yarn
 RUN apt-get install -y nodejs
 RUN apt install git-all -y
 RUN apt-get install -y libtidy-dev
-RUN apt-get intall npm
+RUN apt-get update && apt-get install -y npm
 
 ENV SPARK_HOME=/usr/local/lib/python3.8/dist-packages/pyspark
 
@@ -24,6 +24,7 @@ RUN pip3 install --upgrade pip
 RUN pip3 install pyspark
 RUN pip3 install pytest
 RUN ln /usr/bin/python3.8 /usr/bin/python
+RUN npm install -g express
 
 RUN mkdir /opt/hadoop
 WORKDIR /opt/hadoop
@@ -36,9 +37,9 @@ RUN wget https://mirrors.ucr.ac.cr/apache/hive/hive-3.1.2/apache-hive-3.1.2-bin.
     tar -xzf apache-hive-3.1.2-bin.tar.gz && \
     rm apache-hive-3.1.2-bin.tar.gz
 
-RUN wget https://mirrors.ucr.ac.cr/apache/kafka/2.6.0/kafka_2.13-2.6.0.tgz && \
-    tar -xzf kafka_2.13-2.6.0.tgz && \
-    rm kafka_2.13-2.6.0.tgz
+#RUN wget https://mirrors.ucr.ac.cr/apache/kafka/2.6.0/kafka_2.13-2.6.0.tgz && \
+    #tar -xzf kafka_2.13-2.6.0.tgz && \
+    #rm kafka_2.13-2.6.0.tgz
 
 RUN adduser --disabled-password --gecos "" hadoopuser
 RUN echo "hadoopuser:hadoop" | chpasswd
