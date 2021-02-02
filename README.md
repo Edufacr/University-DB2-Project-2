@@ -88,9 +88,10 @@ To test your Kafka environment follow the [kafka quickstart guide](https://kafka
 
 ### Visualization 
 Run:
-    node vol/visulizer/app.js
+    node vol/visualizer/app.js
 Access:
     127.0.0.1:9092
 
-//Le hice un apt-get intall npm
 //npm install --save express
+// npm install -g webhdfs
+/data/output/pyspark/part-00172-bd56f0b2-bb15-4c04-8bb3-ceda608d5f48-c000.json
